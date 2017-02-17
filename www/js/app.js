@@ -91,11 +91,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     })
 
-    .state('app.login', {
-        url: '/login',
+    .state('app.home', {
+        url: '/home',
         views: {
             'menuContent': {
-                templateUrl: 'templates/login.html',
+                templateUrl: 'templates/home.html',
                 controller: 'LoginCtrl'
             },
             'fabContent': {
@@ -111,18 +111,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 templateUrl: 'templates/profile.html',
                 controller: 'ProfileCtrl'
             },
-            'fabContent': {
-                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
-                controller: function ($timeout) {
-                    /*$timeout(function () {
-                        document.getElementById('fab-profile').classList.toggle('on');
-                    }, 800);*/
-                }
-            }
+            
         }
     })
     ;
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/login');
+    $urlRouterProvider.otherwise('/app/home');
 });
