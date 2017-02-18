@@ -1,0 +1,20 @@
+<div class="jumbotron">
+
+  <div class="row" ng-hide="showDetails">
+    <ul class="list-inline" infinite-scroll='nextPage()' infinite-scroll-disabled='movieList.busy || showDetails' infinite-scroll-distance='1' style="height:auto">
+      <li data-ng-repeat="(movieTitle, movie) in shows | orderBy:['listOrder']" class="movie" >
+        <button ng-click="displayShowDetails(movie.id)" popover-placement="top" popover="{{movie.title}}"  popover-trigger="mouseenter" class="btn btn-default img-thumbnail" >
+          <img ng-src="{{movie.image}}" class="img-thumbnail">
+        </button>
+      </li>
+      <div ng-show='busy'>Loading data...</div>
+    </ul>
+  </div>
+  <button ng-click="showDetails = false" class="text-right" aria-label="Back to Results" popover="Back to List" popover-trigger="mouseenter"><span class="glyphicon glyphicon-th-list" ></span></button>
+  <div ng-show="showDetails" class="row" >
+    <div ng-controller="MovieDetailsCtrl" ng-include="'partials/movie-details.html'">
+    </div>
+    
+  </div>
+  <hr>
+</div>

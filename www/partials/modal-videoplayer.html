@@ -1,0 +1,19 @@
+<div class="bg-success">
+        <div class="modal-header">
+            <h2 class="modal-title text-center" style="width:100%">{{video_title}} - {{ trailer_title }}</h2>
+        </div>
+        <div class="modal-body" >
+            <div style="margin-left: 15%" >
+            <iframe class="youtube-player" type="text/html" width="600" height="400"
+            ng-src="{{video_url}}" allowfullscreen frameborder="0" >
+
+            </iframe>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        
+        <!-- <button class="btn btn-primary" ng-click="ok()">OK</button> -->
+        <button class="btn btn-info center-block" ng-click="cancel()">Close Window</button>
+    </div>
+</div>

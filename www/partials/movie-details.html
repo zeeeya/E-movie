@@ -1,0 +1,36 @@
+<hr noshade>
+
+<div style="float:left; margin: 20;" ng-controller="VideoPlayerCtrl">
+	<div class="btn" ng-hide="details.trailer_url.length"><img ng-src="{{ details.details_img_url }}"></img></div>
+	<div ng-click="playVideo(details.trailer_url, details.trailers)"  ng-show="details.trailer_url.length" popover-trigger="mouseenter" class="btn " popover="Watch Trailer" popover-placement="top" > 
+		<img ng-src="{{details.details_img_url }}" ></img>&nbsp;
+	</div>
+</div>
+<div class="h2">Title: {{ details.title }}</div>
+
+<p><em><b>{{details.tagline}}</b></em></p>
+<div><strong>Released:</strong> {{ details.release_date }}</div>
+<div ng-show="details.homepage"><strong>Official Homepage:</strong><a ng-href="{{ details.homepage }}#" target="_blank">{{ details.homepage}} </a></div>
+<div>
+	<ul class="list-inline">
+		<strong>Cast: </strong>
+		<li data-ng-repeat="person in details.casts.cast | orderBy:['orderBy'] | limitTo:3" class="movie" >
+			<u><a ng-click="ShowPersonDetails( person.id) ">{{person.name}}</a></u>
+		</li>
+	</ul>
+
+</div>
+
+<p>{{ details.synopsis }}</p>
+
+<hr noshade width="100%">
+<div class="container-fluid" ng-show="details.similar_movies.results">
+<h2>Related Videos</h2>
+<div class="row">
+	<div class="col-xs-6 col-md-4" data-ng-repeat="movie in details.similar_movies.results" class="movie" style="height:200; border-width: 2px">
+		<a ng-click="displayDetails(movie.id)" ><center><img ng-src="{{trustSrc(getImage(movie))}}" height="180"></img></center>
+			<div class="text-center text-info">{{ movie.title }}</div>
+		</a>
+	</div>
+</div>
+</div>

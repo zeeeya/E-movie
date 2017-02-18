@@ -1,11 +1,10 @@
-<ion-view view-title="Movies">
-    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
-        <div class="list half">
-            <div ui-sref="app.profile" class="card card-gallery item item-text-wrap">
-                <div class="container">
-        <h2>Welcome!</h2>
+<ion-view view-title="">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+
+    <div class="container">
+        <h2 style="margin-top: 1in"></h2>
         <p>
-            This site was created to explore the use of AngularJS and The Movie DB API.
+            E-MOVIE
         </p>
     </div>
     <div class="container" ng-controller="MovieListCtrl" data-ng-init="init()" >
@@ -37,7 +36,6 @@
     <script type='text/javascript' src='scripts/ng-infinite-scroll.min.js'></script>
     <script type="text/javascript" src="scripts/paging.js"></script>
     <script type="text/javascript" src="scripts/movieDb.app.js"></script>
-            </div>
-        </div>
-    </ion-content>
-</ion-view>
+</ion-content>
+</ion-nav-view>
+ 
