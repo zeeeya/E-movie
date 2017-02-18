@@ -1,3 +1,19 @@
-<ion-view title="Movie Rating" id="page2" style="">
-  <ion-content padding="true" class="has-header"></ion-content>
+<ion-view title="Movie Rating" id="page2" >
+<div class="bar bar-subheader item-input-inset bar-light">
+	<label class="item-input-wrapper">
+	<i class="icon ion-search placeholder-icon"></i>
+	<input type="search" ng-model="query" placeholder="Search">
+	</label>
+</div>
+<div>
+  <ion-content padding="true" class="has-header stable" >
+  	<ion-item  ng-repeat="movie in movies | filter:query | orderBy:title" style="background-color: #ccc">
+  	<br/>
+  		<h2>Title:&nbsp;&nbsp;{{movie.title}}</h2>
+  		<h2>Popularity:&nbsp;&nbsp;{{movie.popularity}}</h2>
+  		<h2>Vote Count:&nbsp;&nbsp;{{movie.vote_count}}</h2>
+  		<h2>Vote Average:&nbsp;&nbsp;{{movie.vote_average}}</h2>
+  	</ion-item>
+  </ion-content>
+  </div>
 </ion-view>

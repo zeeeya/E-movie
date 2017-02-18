@@ -80,7 +80,15 @@
       <ion-header-bar class="bar-stable">
         <div class="title">Menu</div>
       </ion-header-bar>
-      <ion-content ng-controller="menuCtrl" padding="false" class="side-menu-left has-header "></ion-content>
+      <ion-content ng-controller="menuCtrl" padding="false" class="side-menu-left has-header ">
+         <ion-list>
+                
+                <ion-item nav-clear menu-close ui-sref="home">
+                    Logout
+                </ion-item>
+                
+            </ion-list>
+      </ion-content>
     </ion-side-menu>
   </ion-side-menus>
 </div>
